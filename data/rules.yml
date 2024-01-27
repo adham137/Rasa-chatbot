@@ -1,0 +1,64 @@
+version: "3.1"
+
+rules:
+
+#- rule: uttername whenever provided
+#  steps:
+#  - intent: provide_name
+#  - action: greet_user
+
+
+#- rule: fallback whenever they send a message with low NLU confidence
+#  steps:
+#  - intent: nlu_fallback
+#  - action: utter_fallback
+
+- rule: Low confidence is detected, activate fallback action
+  steps:
+  - intent: nlu_fallback
+  - action: action_fallback
+
+- rule: greet back user whenever greeted
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: help user if he provides his name
+  steps:
+  - intent: provide_name
+  - action: affirm_name
+
+- rule: provide cast whenever user requests
+  steps:
+  - intent: request_cast
+  - action: provide_cast
+
+- rule: provide description whenever user requests
+  steps:
+  - intent: request_description
+  - action: provide_description
+
+- rule: provide movies by actor whenever user requests
+  steps:
+  - intent: request_movies_by_actor
+  - action: provide_movies_by_actor
+
+- rule: provide random movie whenever user requests
+  steps:
+  - intent: request_random_movie
+  - action: provide_random_movie
+
+- rule: provide pet facts whenever user requests
+  steps:
+  - intent: request_pet_fact
+  - action: provide_pet_fact
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot

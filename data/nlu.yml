@@ -1,0 +1,184 @@
+version: "3.1"
+
+nlu:
+
+- intent: provide_name
+  examples: |
+    - [Adham](user_name)
+    - my name is [ahmed](user_name) 
+    - people call me [mohamed](user_name)
+    - i am [Amr](user_name)
+    - i am called [emad](user_name)
+- lookup: user_name
+  examples: |
+    - Adham
+    - Ahmed
+    - Mohamed
+    - Amr
+    - emad
+
+- intent: request_movies_by_actor
+  examples: |
+    - other movies by this actor
+    - what movies does this actor star in 
+    - what are some movies involving [Hayes Hargrove](actor)
+    - movies starred by [AL Pacino](actor)
+    - movies starring [Sylvester Stallone](actor)
+    - [Brandon Fierro](actor) appeared in what movies
+- lookup: actor
+  examples: |
+    - Hayes Hargrove
+    - AL Pacino
+    - Brandon Fierro
+    - Sylvester Stallone
+    - Clint Obenchain
+
+- intent: request_description
+  examples: |
+    - what is the description 
+    - description of this movie
+    - give me the description of [InuYasha the Movie: Affections Touching Across Time](movie)
+    - what is the description of [Jaws 2](movie)
+    - description of [jaguar](movie)
+    - [rocky](movie) description
+- lookup: movie
+  examples: |
+    - InuYasha the Movie: Affections Touching Across Time
+    - rocky
+    - Jaws 2
+    - Lucifer
+    - Prey
+    - Naruto Shippuden the Movie: Blood Prison
+
+- intent: request_cast
+  examples: |
+    - give me cast of [InuYasha the Movie: Affections Touching Across Time](movie)
+    - who casted in [Jaws 2](movie)
+    - cast of [jaguar](movie)
+    - [rocky](movie) cast
+    - cast
+    - who were the cast of this movie
+    - who casted
+- lookup: movie
+  examples: |
+    - InuYasha the Movie: Affections Touching Across Time
+    - rocky
+    - Jaws 2
+    - Lucifer
+    - Prey
+    - Naruto Shippuden the Movie: Blood Prison
+
+- intent: request_random_movie
+  examples: |
+    - give me a random movie to watch
+    - suggest a movie
+    - what top ranked movie can i watch
+    
+
+- intent: request_pet_fact
+  examples: |
+    - give me some facts about pets
+    - what are some facts about pets ?
+    - facts about [dogs](pet)
+    - [cat](pet) facts
+- lookup: pet
+  examples: |
+    - dog
+    - cat
+    
+
+- intent: testing
+  examples: |
+    - i want to test you
+    - can i test you
+    - test yourself
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?

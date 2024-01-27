@@ -1,0 +1,64 @@
+version: "3.1"
+
+stories:
+
+#- story: name path 1
+#  steps:
+#    - intent: provide_name
+#    - intent: request_name
+#    - action: utter_name
+
+- story: movies path 1
+  steps:
+  - intent: request_random_movie
+  - action: provide_random_movie
+  - intent: request_cast
+  - action: provide_cast
+  - intent: request_description
+  - action: provide_description
+  - intent: request_movies_by_actor
+  - action: provide_movies_by_actor
+
+#- story: fallback
+#  steps:
+#  - intent: affirm
+#  - action: action_fallback
+
+
+- story: testing
+  steps:
+  - intent: testing
+  - action: utter_testing
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: provide_name
+  - action: affirm_name
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: provide_name
+  - action: affirm_name
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: provide_name
+  - action: affirm_name
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
